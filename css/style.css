@@ -1,3 +1,4 @@
+/* custom colors for the site */
 :root {
   --bg-color: #1a1c19;
   --on-bg: #e2e3dd;
@@ -5,9 +6,11 @@
   --on-container-primary: #abf4a2;
   --container-secondary: #3b4b38;
   --on-container-secondary: #d6e8ce;
-
+  --link-primary: #448AFF;
+  --link-mouse-over: #4080FF;
 }
 
+/* Layout Reset by David Allen */
 /* Box sizing rules */
 *,
 *::before,
@@ -88,11 +91,44 @@ html, body {
   color: var(--on-bg);
 }
 
-/* .container {
+a {
+  color: var(--link-primary);
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--link-mouse-over);
+}
+
+.container {
   max-width: 100rem;
   margin-inline: auto;
   padding-inline: 2rem;
-} */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5em;
+  list-style-type: none;
+}
+
+.main-article {
+  display: grid;
+   margin: 2em 0;
+   justify-self: center;
+}
+
+.main-content {
+  background: rgb(9 83 20 / 0.9);
+  color: var(--on-container-primary);
+  align-self: start;
+}
 
 .articles {
   display: grid;
@@ -115,6 +151,22 @@ html, body {
   display: grid;
 }
 
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  width: 6.25em;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.round {
+  border-radius: 50%;
+}
+
 .stacked > * {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -122,6 +174,12 @@ html, body {
 
 .article-title {
   color: var(--on-container-primary);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1em;
+  padding: 3em;
 }
 
 .article-content {
